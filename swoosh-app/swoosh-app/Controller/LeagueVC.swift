@@ -10,11 +10,11 @@ import UIKit
 
 class LeagueVC: UIViewController {
 
-    var player: Player!
+    var playerLeagueVC: Player!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        player = Player()
+        playerLeagueVC = Player()
         // Do any additional setup after loading the view.
     }
     
@@ -36,17 +36,18 @@ class LeagueVC: UIViewController {
     }
     
     func buttonTapped(selectedLeague : String) {
-        player.desiredLeague = selectedLeague
+        playerLeagueVC.desiredLeague = selectedLeague
         nextButton.isEnabled = true
     }
-    /*
-    // MARK: - Navigation
+    
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if let skillViewController = segue.destination as? SkillVC {
+                skillViewController.playerSkillVC = playerLeagueVC
+        }else {
+            print("View controller not found")
+        }
     }
-    */
+    
 
 }
