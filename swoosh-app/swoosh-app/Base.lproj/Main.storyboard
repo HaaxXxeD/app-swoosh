@@ -59,7 +59,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="YxZ-wq-bWC" kind="modal" modalTransitionStyle="crossDissolve" id="BmF-ai-5lH"/>
+                                    <segue destination="YxZ-wq-bWC" kind="modal" identifier="goingToGenderVC" modalTransitionStyle="crossDissolve" id="Tqs-ZB-h4g"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -156,12 +156,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="0bK-pk-3BZ" kind="modal" modalTransitionStyle="crossDissolve" id="USE-fC-Z1V"/>
+                                    <action selector="onNextTapped:" destination="YxZ-wq-bWC" eventType="touchUpInside" id="IMD-Pe-rN5"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eOw-MW-IEZ">
-                                <rect key="frame" x="25" y="44" width="61" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eOw-MW-IEZ">
+                                <rect key="frame" x="25" y="44" width="41" height="35"/>
                                 <state key="normal" image="backButton"/>
                                 <connections>
                                     <segue destination="Ego-Zw-Or2" kind="unwind" unwindAction="unWindFromSkillVCWithBacksegue:" id="kMQ-tk-VqQ"/>
@@ -172,6 +171,7 @@
                         <constraints>
                             <constraint firstItem="tTp-sl-yL7" firstAttribute="centerX" secondItem="VOb-52-ABn" secondAttribute="centerX" id="2y6-q9-13d"/>
                             <constraint firstItem="tTp-sl-yL7" firstAttribute="top" secondItem="Sfu-Kh-ziT" secondAttribute="bottom" constant="48" id="7Zp-X1-HdB"/>
+                            <constraint firstItem="eOw-MW-IEZ" firstAttribute="leading" secondItem="VOb-52-ABn" secondAttribute="leadingMargin" constant="5" id="7hy-sq-kGW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="YtP-SJ-KXG" secondAttribute="trailing" constant="5" id="8m9-AK-8OH"/>
                             <constraint firstAttribute="trailing" secondItem="WRf-aR-tGX" secondAttribute="trailing" id="8y9-Mf-e5z"/>
                             <constraint firstItem="LIB-Nu-QEr" firstAttribute="centerX" secondItem="VOb-52-ABn" secondAttribute="centerX" id="9Gp-gS-iQ3"/>
@@ -182,11 +182,15 @@
                             <constraint firstItem="WRf-aR-tGX" firstAttribute="top" secondItem="VOb-52-ABn" secondAttribute="top" id="Xre-VI-LXA"/>
                             <constraint firstItem="WRf-aR-tGX" firstAttribute="leading" secondItem="VOb-52-ABn" secondAttribute="leading" id="YHw-Rr-9S9"/>
                             <constraint firstAttribute="bottom" secondItem="WRf-aR-tGX" secondAttribute="bottom" id="fpC-j9-0Gp"/>
+                            <constraint firstItem="eOw-MW-IEZ" firstAttribute="top" secondItem="Sfu-Kh-ziT" secondAttribute="bottom" id="giU-B9-n3j"/>
                             <constraint firstItem="r6H-pX-nUh" firstAttribute="leading" secondItem="VOb-52-ABn" secondAttribute="leadingMargin" constant="5" id="oDu-MC-CLo"/>
                             <constraint firstItem="w4Y-bW-wxW" firstAttribute="top" secondItem="LIB-Nu-QEr" secondAttribute="bottom" constant="60.666666666666657" id="qh8-Bo-MH1"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="HMw-d2-guo"/>
+                    <connections>
+                        <segue destination="0bK-pk-3BZ" kind="modal" identifier="goingToSkillViewController" modalTransitionStyle="crossDissolve" id="oTi-zS-Jbh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fqe-tQ-kwa" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Ego-Zw-Or2" userLabel="Exit" sceneMemberID="exit"/>
@@ -249,18 +253,18 @@
                                     <constraint firstAttribute="height" constant="40" id="CUS-5k-VMo"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rU9-ro-mVf">
-                                <rect key="frame" x="25" y="44" width="61" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rU9-ro-mVf">
+                                <rect key="frame" x="25" y="44" width="38" height="38"/>
                                 <state key="normal" image="backButton"/>
                                 <connections>
-                                    <segue destination="YxZ-wq-bWC" kind="modal" modalTransitionStyle="crossDissolve" id="4Rj-b1-Ba6"/>
+                                    <segue destination="Mmc-pK-oAa" kind="unwind" unwindAction="unWindFromSkillVCWithBacksegue:" id="ucs-nl-5fj"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="fQj-LL-UZ1" firstAttribute="trailing" secondItem="UFc-UV-kQC" secondAttribute="trailingMargin" constant="5" id="223-Jh-wOx"/>
+                            <constraint firstItem="rU9-ro-mVf" firstAttribute="leading" secondItem="UFc-UV-kQC" secondAttribute="leadingMargin" constant="5" id="4q7-Js-Cs8"/>
                             <constraint firstItem="e7w-Rf-6hw" firstAttribute="top" secondItem="dWh-V0-BnB" secondAttribute="bottom" constant="300" id="64V-tS-sgY"/>
                             <constraint firstItem="e7w-Rf-6hw" firstAttribute="leading" secondItem="UFc-UV-kQC" secondAttribute="leadingMargin" constant="5" id="85h-QY-zxe"/>
                             <constraint firstItem="dWh-V0-BnB" firstAttribute="bottom" secondItem="IDm-bD-hOd" secondAttribute="top" constant="-48" id="8JQ-EU-Qld"/>
@@ -270,6 +274,7 @@
                             <constraint firstItem="mbh-Hk-9V6" firstAttribute="top" secondItem="UFc-UV-kQC" secondAttribute="top" id="Cxy-Gy-tP1"/>
                             <constraint firstItem="fQj-LL-UZ1" firstAttribute="leading" secondItem="UFc-UV-kQC" secondAttribute="leadingMargin" constant="5" id="EAg-1J-dmq"/>
                             <constraint firstItem="Thz-UE-zQp" firstAttribute="centerX" secondItem="UFc-UV-kQC" secondAttribute="centerX" id="GcV-bY-HcO"/>
+                            <constraint firstItem="rU9-ro-mVf" firstAttribute="top" secondItem="dWh-V0-BnB" secondAttribute="bottom" id="bGI-00-slq"/>
                             <constraint firstAttribute="trailingMargin" secondItem="e7w-Rf-6hw" secondAttribute="trailing" constant="5" id="bfX-6E-OO7"/>
                             <constraint firstItem="Thz-UE-zQp" firstAttribute="top" secondItem="IDm-bD-hOd" secondAttribute="bottom" constant="35" id="ecG-pu-R2t"/>
                             <constraint firstAttribute="trailing" secondItem="mbh-Hk-9V6" secondAttribute="trailing" id="jz1-MC-hYW"/>
@@ -279,8 +284,9 @@
                     <navigationItem key="navigationItem" id="lFc-7n-a4d"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hZN-fN-QuP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Mmc-pK-oAa" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1659" y="131"/>
+            <point key="canvasLocation" x="1657.9710144927537" y="130.58035714285714"/>
         </scene>
     </scenes>
     <resources>
@@ -290,8 +296,4 @@
         <image name="swooshLogo" width="119" height="20"/>
         <image name="welcomeScreenBG" width="414" height="736"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="USE-fC-Z1V"/>
-        <segue reference="4Rj-b1-Ba6"/>
-    </inferredMetricsTieBreakers>
 </document>
